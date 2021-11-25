@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Expense from './components/Expenses/Expense/Expense';
 import AddExpense from './components/AddExpense/AddExpense/AddExpense'
+import TopBar from './components/TopBar/TopBar';
 
 function App() {
   const expensesDefault = [
@@ -32,16 +33,24 @@ function App() {
   ];
 
   const [expenses, setExpenses] = useState(expensesDefault)
+  const [editing, setEditing] = useState(false)
 
   const addExpense = (expense) => {
     setExpenses([...expenses, expense])
   }
 
+
+  const switchEditing = () => {
+    editing && setEditing(false);
+    !editing && setEditing(true);
+  }
+
   return (
     <div>
+      <TopBar expenses={expenses} switchEditing={switchEditing} />
+      {editing && (
+        <AddExpense addExpense={addExpense} />)}
       <Expense expenses={expenses} />
-      <AddExpense addExpense={addExpense} />
-
     </div>
   );
 }

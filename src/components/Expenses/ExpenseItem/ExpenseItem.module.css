@@ -37,7 +37,7 @@
   border-radius: 12px;
 }
 
-@media (min-width: 580px) {
+@media (min-width: 768px) {
   .expenseDesc {
     flex-direction: row;
     align-items: center;

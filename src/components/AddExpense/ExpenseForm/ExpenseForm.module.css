@@ -1,5 +1,6 @@
 .controls {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   text-align: left;
   align-items: center;
@@ -17,4 +18,42 @@
 .buttons {
   margin-left: 1.2em;
   text-align: right;
+}
+
+@media (max-width: 1024px) {
+  .controls {
+    justify-content: center;
+    margin: auto;
+  }
+
+  .control input {
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 10rem;
+  }
+
+  .buttons {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .controls {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .control input {
+    padding: 0.1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 5rem;
+    max-width: 100%;
+  }
+
+  .buttons {
+    display: block;
+    margin: auto;
+  }
 }

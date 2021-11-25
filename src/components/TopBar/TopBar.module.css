@@ -1,0 +1,31 @@
+.topBar {
+  display: flex;
+  padding: 1rem;
+  background-color: white;
+  margin: 2rem auto;
+  width: 50rem;
+  max-width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.title {
+  display: flex;
+  margin: auto;
+}
+
+.name {
+  font-size: 50px;
+  margin: 0 auto;
+}
+
+.count {
+  font-size: 30px;
+  padding-left: 10px;
+}
+
+.editButton {
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+}

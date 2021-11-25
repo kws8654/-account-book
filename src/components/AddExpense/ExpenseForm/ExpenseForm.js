@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from './ExpenseForm.module.css'
 
-function ExpenseForm({ addExpenseData }) {
+function ExpenseForm({ addExpenseData, stopEditing }) {
 
     const [title, setTitle] = useState('');
     const [amount, setAmount] = useState('');
@@ -36,6 +36,7 @@ function ExpenseForm({ addExpenseData }) {
                         type='text'
                         value={title}
                         onChange={titleChange}
+                        placeholder='지출명'
                     />
                 </div>
                 <div className={styles.control}>
@@ -45,6 +46,7 @@ function ExpenseForm({ addExpenseData }) {
                         step='1'
                         value={amount}
                         onChange={amountChange}
+                        placeholder='금액'
                     />
                 </div>
                 <div className={styles.control}>
@@ -52,10 +54,11 @@ function ExpenseForm({ addExpenseData }) {
                         type='date'
                         value={date}
                         onChange={dateChange}
+                        placeholder='날짜'
                     />
                 </div>
                 <div className={styles.buttons}>
-                    <button onClick>취소</button>
+                    <button onClick={stopEditing}>취소</button>
                     <button type='submit'>등록</button>
                 </div>
             </div>
