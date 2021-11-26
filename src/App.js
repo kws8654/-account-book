@@ -39,10 +39,13 @@ function App() {
     setExpenses([...expenses, expense])
   }
 
-
   const switchEditing = () => {
     editing && setEditing(false);
     !editing && setEditing(true);
+  }
+
+  const filterdYear = (selectedYear) => {
+    setExpenses(selectedYear);
   }
 
   return (
@@ -50,7 +53,7 @@ function App() {
       <TopBar expenses={expenses} switchEditing={switchEditing} />
       {editing && (
         <AddExpense addExpense={addExpense} />)}
-      <Expense expenses={expenses} />
+      <Expense expenses={expenses} filterdYear={filterdYear} />
     </div>
   );
 }

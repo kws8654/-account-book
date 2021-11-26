@@ -3,7 +3,7 @@ import styles from './ExpenseItem.module.css'
 import Card from '../../UI/Card'
 import ExpenseDate from '../ExpenseDate/ExpenseDate'
 
-function ExpenseItem({ key, title, amount, date }) {
+function ExpenseItem({ title, amount, date }) {
     return (
         <div>
             <Card className={styles.expenseItem}>

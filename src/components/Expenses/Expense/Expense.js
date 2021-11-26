@@ -8,20 +8,20 @@ import ExpenseChart from '../../ExpenseChart/ExpenseChart'
 function Expense({ expenses }) {
     const [filtered, setFiltered] = useState('2021')
 
-    const filterChanged = (selected) => {
-        setFiltered(selected);
-    }
-
     const filteredExpenses = expenses.filter((expense) => {
         return expense.date.getFullYear().toString() === filtered;
     });
+
+    const filterChanged = (selected) => {
+        setFiltered(selected);
+    }
 
     return (
         <div>
             <Card className={styles.expenses}>
                 <ExpenseFilter selected={filtered} filterChanged={filterChanged} />
                 <ExpenseChart expenses={filteredExpenses} />
-                <ExpenseList items={expenses} />
+                <ExpenseList items={filteredExpenses} />
             </Card>
         </div>
     )

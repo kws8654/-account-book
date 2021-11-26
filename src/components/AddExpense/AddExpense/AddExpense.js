@@ -6,12 +6,14 @@ function AddExpense({ addExpense }) {
 
     const [editing, setEditing] = useState(false)
 
-    const addExpenseData = (expenseData) => {
+    const addExpenseData = (enteredExpenseData) => {
+        const expenseData = {
+            ...enteredExpenseData,
+            id: Math.random().toString(),
+        };
         addExpense(expenseData);
     }
-    const startEditing = () => {
-        setEditing(true);
-    }
+
 
     const stopEditing = () => {
         setEditing(false);

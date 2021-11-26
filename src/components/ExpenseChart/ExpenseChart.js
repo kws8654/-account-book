@@ -1,6 +1,5 @@
 import React from 'react'
 import Chart from './Chart';
-import styles from './ExpenseChart.module.css'
 
 function ExpenseChart({ expenses }) {
     const chartDataPoints = [
