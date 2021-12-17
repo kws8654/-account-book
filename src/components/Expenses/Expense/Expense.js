@@ -5,12 +5,20 @@ import Card from '../../UI/Card'
 import ExpenseFilter from '../ExpenseFilter/ExpenseFilter'
 import ExpenseChart from '../../ExpenseChart/ExpenseChart'
 
-function Expense({ expenses }) {
+function Expense({ expenses, deleteExpense }) {
     const [filtered, setFiltered] = useState('2021')
 
-    const filteredExpenses = expenses.filter((expense) => {
-        return expense.date.getFullYear().toString() === filtered;
-    });
+    // const filteredExpenses = expenses.filter((expense) => {
+    //     return expense.date.getFullYear().toString() === filtered;
+    // });
+
+    let filteredExpenses = []
+
+    if (filtered === '모두 보기') {
+        filteredExpenses = expenses;
+    } else {
+        filteredExpenses = expenses.filter((expense) => { return expense.date.getFullYear().toString() === filtered })
+    }
 
     const filterChanged = (selected) => {
         setFiltered(selected);
@@ -21,7 +29,7 @@ function Expense({ expenses }) {
             <Card className={styles.expenses}>
                 <ExpenseFilter selected={filtered} filterChanged={filterChanged} />
                 <ExpenseChart expenses={filteredExpenses} />
-                <ExpenseList items={filteredExpenses} />
+                <ExpenseList items={filteredExpenses} deleteExpense={deleteExpense} />
             </Card>
         </div>
     )

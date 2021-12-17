@@ -11,6 +11,7 @@ function ExpenseFilter({ selected, filterChanged }) {
             <div className={styles.FilterControl}>
                 <label>필터</label>
                 <select value={selected} onChange={filterSelected}>
+                    <option value='모두 보기'>모두 보기</option>
                     <option value='2022'>2022</option>
                     <option value='2021'>2021</option>
                     <option value='2020'>2020</option>

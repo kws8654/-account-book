@@ -48,6 +48,13 @@ function ExpenseForm({ addExpenseData, stopEditing }) {
         setDate('');
     }
 
+    const resetData = (e) => {
+        e.preventDefault();
+        setTitle('');
+        setAmount('');
+        setDate('');
+    }
+
     const closeModal = () => {
         setError(false);
     }
@@ -55,7 +62,7 @@ function ExpenseForm({ addExpenseData, stopEditing }) {
     return (
         <div>
             {error && <Modal title={error.title} message={error.message} closeModal={closeModal} />}
-            <form onSubmit={submitData}>
+            <form>
                 <div className={styles.controls}>
                     <div className={styles.control}>
                         <input
@@ -84,8 +91,8 @@ function ExpenseForm({ addExpenseData, stopEditing }) {
                         />
                     </div>
                     <div className={styles.buttons}>
-                        <button onClick={stopEditing}>취소</button>
-                        <button type='submit'>등록</button>
+                        <button onClick={resetData}>리셋</button>
+                        <button onClick={submitData}>등록</button>
                     </div>
                 </div>
             </form>

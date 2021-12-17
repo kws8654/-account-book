@@ -2,8 +2,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  text-align: left;
+  text-align: center;
   align-items: center;
+  justify-content: center;
 }
 
 .control input {
@@ -11,15 +12,16 @@
   padding: 0.5rem;
   border-radius: 6px;
   border: 1px solid #ccc;
-  width: 10rem;
   max-width: 100%;
 }
 
 .buttons {
   margin-left: 1.2em;
-  text-align: right;
+  text-align: center;
+  align-content: center;
 }
 
+/* 
 @media (max-width: 1024px) {
   .controls {
     justify-content: center;
@@ -56,4 +58,4 @@
     display: block;
     margin: auto;
   }
-}
+} */
